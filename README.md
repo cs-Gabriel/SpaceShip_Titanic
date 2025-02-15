@@ -1,3 +1,3 @@
-Exercicio originario do Kaggle:
+Exercício originario do Kaggle:
 
 Link: https://www.kaggle.com/competitions/spaceship-titanic
