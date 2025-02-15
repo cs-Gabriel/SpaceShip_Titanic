@@ -1,4 +1,4 @@
-
+#Importando Bibiliotecas
 import pandas as pd
 
 from sklearn.tree import DecisionTreeClassifier, plot_tree
@@ -66,7 +66,7 @@ Y_train = train['Transported'].astype(int)
 #%%Iniciando a arvore
 
 # Criando o modelo de árvore de decisão
-arvore = DecisionTreeClassifier(criterion='gini', max_depth=6, random_state=42)
+arvore = DecisionTreeClassifier(criterion='gini', max_depth=3, random_state=42)
 
 # Treinando o modelo com os dados de treino
 arvore.fit(X_train, Y_train)
@@ -104,7 +104,7 @@ Y_pred = arvore.predict(X_teste)
 #%% Adicionando PassengerId ao DataFrame de resultados
 resultado = pd.DataFrame({
     'PassengerId': test['PassengerId'],  # Identificador do passageiro
-    'Transported_Previsto': pd.Series(Y_pred).replace({0: False, 1: True})  # Resultado da previsão
+    'Transported': pd.Series(Y_pred).replace({0: False, 1: True})  # Resultado da previsão
 })
 
 # Exibir as primeiras linhas para conferir
